@@ -1,4 +1,4 @@
-package com.android.camera.example;
+package com.android.moar.cropper;
 
 import android.content.Context;
 import android.content.Intent;
