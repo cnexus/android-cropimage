@@ -15,12 +15,21 @@ repositories {
 }
 
 android {
-    compileSdkVersion rootProject.ext.compileSdkVersion
-    buildToolsVersion rootProject.ext.buildToolsVersion
-
+    compileSdkVersion 19
+    buildToolsVersion '19.1.0'
     defaultConfig {
-        minSdkVersion rootProject.ext.minSdkVersion
+        minSdkVersion 15
         targetSdkVersion rootProject.ext.targetSdkVersion
+    }
+    productFlavors {
+    }
+    buildTypes {
+        release {
+        applicationVariants.all { variant ->
+            def file = variant.outputFile
+            variant.outputFile = new File(file.parent, "MOARCropper.apk")
+        }
+    }
     }
 }
 
